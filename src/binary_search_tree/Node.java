@@ -1,6 +1,6 @@
 package binary_search_tree;
 
-public class Node<T> {
+public class Node<T extends Comparable<T>> {
     private T value;
     private Node<T> leftChild;
     private Node<T> rightChild;
