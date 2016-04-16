@@ -5,10 +5,13 @@ import java.util.Random;
 public class BinaryTreeSample {
     public static void main(String[] args) {
         BinarySearchTree<Integer> tree = new BinarySearchTree<>();
-        for (int i = 1; i <= 10; i++) {
+        int[] sampleTree = { 4, 1, 7, 5, 0, 3 };
+
+        for (int i = 0; i < sampleTree.length; i++) {
             //tree.insert(-20 + new Random().nextInt(20));
-            tree.insert(i);
+            //tree.insert(i);
+            tree.insert(sampleTree[i]);
         }
-        System.out.println(tree.search(9).getRightChild().getValue());
+        tree.inOrderTraverse(tree.getRoot());
     }
 }

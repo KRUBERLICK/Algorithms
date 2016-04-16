@@ -4,6 +4,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
     private Node<T> root;
 
+    public Node<T> getRoot() {
+        return root;
+    }
+
     public void insert(T value) {
         Node<T> tempNode = new Node<>();
         Node<T> current;
@@ -53,5 +57,29 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
 
         return null;
+    }
+
+    public void preOrderTraverse(Node<T> root) {
+        if (root != null) {
+            System.out.print(root.getValue() + " ");
+            preOrderTraverse(root.getLeftChild());
+            preOrderTraverse(root.getRightChild());
+        }
+    }
+
+    public void postOrderTraverse(Node<T> root) {
+        if (root != null) {
+            postOrderTraverse(root.getLeftChild());
+            postOrderTraverse(root.getRightChild());
+            System.out.print(root.getValue() + " ");
+        }
+    }
+
+    public void inOrderTraverse(Node<T> root) {
+        if (root != null) {
+            inOrderTraverse(root.getLeftChild());
+            System.out.print(root.getValue() + " ");
+            inOrderTraverse(root.getRightChild());
+        }
     }
 }
