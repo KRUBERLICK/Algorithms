@@ -31,4 +31,27 @@ public class BinarySearchTree<T extends Comparable<T>> {
             }
         }
     }
+
+    public Node<T> search(T value) {
+
+        if (root == null) {
+            return null;
+        }
+
+        Node<T> current = root;
+
+        while (current != null) {
+            if (value.compareTo(current.getValue()) == 0) {
+
+                return current;
+
+            } else if (value.compareTo(current.getValue()) < 0) {
+                current = current.getLeftChild();
+            } else {
+                current = current.getRightChild();
+            }
+        }
+
+        return null;
+    }
 }

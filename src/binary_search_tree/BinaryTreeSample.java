@@ -6,7 +6,9 @@ public class BinaryTreeSample {
     public static void main(String[] args) {
         BinarySearchTree<Integer> tree = new BinarySearchTree<>();
         for (int i = 1; i <= 10; i++) {
-            tree.insert(-20 + new Random().nextInt(20));
+            //tree.insert(-20 + new Random().nextInt(20));
+            tree.insert(i);
         }
+        System.out.println(tree.search(9).getRightChild().getValue());
     }
 }
